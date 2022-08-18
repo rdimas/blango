@@ -30,7 +30,8 @@ class Dev(Configuration):
     DEBUG = values.BooleanValue(True)
 
     ALLOWED_HOSTS = []
-
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    ACCOUNT_ACTIVATION_DAYS = 7
     LOGGING = {
         "version": 1,
         "disable_existing_loggers": False,
@@ -71,7 +72,7 @@ class Dev(Configuration):
     }
 
     # Application definition
-
+    
     INSTALLED_APPS = [
         'django.contrib.admin',
         'django.contrib.auth',
